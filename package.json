@@ -1,0 +1,76 @@
+{
+    "name": "wetool",
+    "version": "0.1.0",
+    "private": true,
+    "main": "main.js",
+    "author": "Jeanne",
+    "build": {
+        "productName": "WeTool pro",
+        "appId": "com.JeanneW.app",
+        "icon": "./public/logo.ico",
+        "mac": {
+            "target": [
+                "dmg",
+                "zip"
+            ],
+            "icon": "./public/logo.ico"
+        },
+        "win": {
+            "target": [
+                "nsis",
+                "zip"
+            ],
+            "icon": "./public/logo.ico"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "start": "nodemon --exec electron . --watch ./ --ext .js,.html,.css,.vue",
+        "pack": "electron-packager . WeToolPro1.0 --win --out ../ WeToolPro --arch=x64 --app-version=0.0.1 --electron-version=23.0.0",
+        "dist1": "electron-builder --win --x64",
+        "dist2": "electron-builder --win --ia32"
+
+    },
+    "dependencies": {
+        "core-js": "^3.8.3",
+        "electron-icon-builder": "^2.0.1",
+        "jquery": "^3.6.3",
+        "vue": "^3.2.13",
+        "vue-router": "^4.1.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/eslint-parser": "^7.12.16",
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-eslint": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "cropper": "^4.1.0",
+        "electron": "^23.0.0",
+        "eslint": "^7.32.0",
+        "eslint-plugin-vue": "^8.0.3",
+        "nodemon": "^2.0.20"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/vue3-essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "@babel/eslint-parser"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
+    ]
+}
