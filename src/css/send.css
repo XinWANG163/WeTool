@@ -1,0 +1,696 @@
+/* 进度条及内容界面 */
+
+#sendingContent {
+    background: rgba(255, 255, 255, 1);
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    width: 868px;
+    height: 554px;
+    left: 9px;
+    top: 60px;
+    overflow-x: hidden;
+}
+
+.qiehuan {
+    position: absolute;
+    z-index: 10;
+    width: 220px;
+    height: 30px;
+    border: 1.5px solid rgb(56, 112, 233);
+    border-radius: 3px;
+    left: 15px;
+    top: 8px;
+    font-size: 14px;
+}
+
+#arrow {
+    position: absolute;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 5px;
+}
+
+#qhtext {
+    position: absolute;
+    z-index: 10;
+    width: 160px;
+    height: 20px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    top: 3px;
+    font-size: 13px;
+    color: rgb(56, 112, 233);
+    -webkit-app-region: no-drag;
+}
+
+#question {
+    position: absolute;
+    z-index: 10;
+    width: 17px;
+    height: 17px;
+    left: 195px;
+    top: 7px;
+    -webkit-app-region: no-drag;
+}
+
+.sendingItemContent {
+    position: absolute;
+    z-index: 10;
+    width: 880px;
+    height: 410px;
+    background: rgba(255, 255, 255, 0);
+    top: 50px;
+    border-radius: 5px;
+    overflow-x: hidden;
+}
+
+.sendingitem {
+    position: relative;
+    z-index: 10;
+    width: 880px;
+    height: 100px;
+    top: 3px;
+    left: -10px;
+    background-color: rgba(252, 248, 255, 0);
+    margin: 10px;
+    box-shadow: 10px 5px 10px 0px rgba(210, 210, 210, 1);
+}
+
+.sendingitem:hover {
+    background-color: rgba(230, 248, 255, 1);
+}
+
+
+/* 进度条 */
+
+.box {
+    position: absolute;
+    z-index: 10;
+    width: 830px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0);
+    top: 5px;
+    left: 15px;
+    border: none;
+    display: inline-block;
+}
+
+.loadBox {
+    position: absolute;
+    z-index: 10;
+    width: 790px;
+    height: 6px;
+    top: 5px;
+    background: rgba(215, 242, 188, 1.0);
+    border: none;
+    border-radius: 2px;
+}
+
+#load {
+    position: absolute;
+    z-index: 10;
+    width: 0px;
+    height: 6px;
+    background: #289903ac;
+}
+
+#loadResult {
+    position: absolute;
+    z-index: 10;
+    width: 27px;
+    height: 20px;
+    left: 793px;
+    font-size: 12px;
+    color: rgba(170, 170, 170, 1.0);
+    text-align: right;
+    /* background: red; */
+}
+
+#total {
+    position: absolute;
+    z-index: 10;
+    width: 35px;
+    top: 5px;
+    height: 15px;
+    left: 834px;
+    vertical-align: bottom;
+    font-size: 12px;
+    padding-bottom: none;
+    margin-bottom: none;
+    color: rgba(170, 170, 170, 1.0);
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+}
+
+.cover {
+    position: relative;
+    background-color: rgba(255, 255, 0, 0);
+    height: 50px;
+    z-index: 11;
+    top: 20px;
+    width: 800px;
+    left: 75px;
+}
+
+#wxpho-sending {
+    position: absolute;
+    z-index: 10;
+    left: 15px;
+    width: 60px;
+    height: 60px;
+    top: 30px;
+}
+
+#sending_img {
+    position: absolute;
+    z-index: 10;
+    left: 15px;
+    width: 60px;
+    height: 60px;
+    top: 30px;
+    border-radius: 3px;
+    display: none;
+}
+
+.text-content {
+    position: relative;
+    z-index: 10;
+    left: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: sans-serif;
+    width: 600px;
+    height: 20px;
+    top: -5px;
+    font-size: 16px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    vertical-align: middle;
+    /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical;
+    /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 1;
+    /** 显示的行数 **/
+    overflow: hidden;
+    /** 隐藏超出的内容 **/
+}
+
+.sending-outer {
+    position: relative;
+    z-index: 10;
+    background-color: red;
+    left: 50px;
+    width: 700px;
+    height: 50px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.sendingText {
+    position: relative;
+    z-index: 10;
+    color: #279104b6;
+    left: 735px;
+    width: 40px;
+    height: 50px;
+    font-size: 12px;
+    top: -20px;
+    display: inline-block;
+}
+
+.text-info {
+    position: absolute;
+    z-index: 10;
+    left: 80px;
+    top: 70px;
+    width: 840px;
+}
+
+.text-info input {
+    font-size: 12px;
+    color: gray;
+    width: 65px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-app-region: no-drag;
+}
+
+#send-time {
+    width: 80px;
+    -webkit-app-region: no-drag;
+}
+
+.text-info button {
+    position: relative;
+    font-size: 12px;
+    left: 330px;
+    color: gray;
+    width: 40px;
+    height: 25px;
+    border: none;
+    outline: none;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(56, 112, 233);
+    -webkit-app-region: no-drag;
+}
+
+.text-info-record {
+    position: absolute;
+    z-index: 10;
+    width: 700px;
+    top: 50px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0);
+}
+
+.text-info-record input {
+    position: relative;
+    color: gray;
+    z-index: 10;
+    font-size: 12px;
+    width: 65px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#input-send-time {
+    width: 80px;
+    -webkit-app-region: no-drag;
+}
+
+
+/* 发送对象列表 */
+
+#show-details-to {
+    position: absolute;
+    z-index: 10;
+    width: 300px;
+    height: 450px;
+    margin: 5px;
+    background: rgba(255, 255, 255, 1);
+    font-size: 15px;
+    top: 70px;
+    left: -15px;
+    display: none;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+/* 滚动条 */
+
+.scrollbar {
+    position: absolute;
+    width: 2px;
+    height: 80%;
+    display: inline-block;
+}
+
+#show-details-to::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 2px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+#show-details-to::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    -webkit-box-shadow: inset 0 0 2px rgb(157, 157, 157);
+    background: #afadad;
+}
+
+#show-details-to::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 2px rgb(157, 157, 157);
+    background: #EDEDED;
+}
+
+
+/*每一条群*/
+
+.show-to-item {
+    position: relative;
+    width: 300px;
+    height: 60px;
+    top: 0px;
+    left: 0.5px;
+    background-color: rgba(254, 254, 254, 1);
+}
+
+.qph {
+    position: relative;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.to-outer {
+    position: absolute;
+    z-index: 10;
+    left: 42px;
+    width: 180px;
+    height: 40px;
+    display: inline-block;
+    background-color: rgba(254, 254, 254, 1);
+}
+
+.to-name {
+    position: absolute;
+    z-index: 10;
+    left: 8px;
+    top: 2px;
+    font-size: 14px;
+    color: black;
+    width: 200px;
+    height: 25px;
+    display: block;
+}
+
+.to-text-info {
+    position: absolute;
+    z-index: 10;
+    top: 23px;
+    left: 8px;
+    font-size: 12px;
+    color: gray;
+    width: 200px;
+    height: 25px;
+    display: block;
+}
+
+.status {
+    position: absolute;
+    z-index: 10;
+    left: 222px;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+}
+
+
+/* 记录页 */
+
+
+/* 记录列表 */
+
+
+/* .record-list {
+    position: absolute;
+    z-index: 10;
+    width: 710px;
+    height: 410px;
+    background: rgba(255, 255, 255, 0);
+    top: 50px;
+    left: 7px;
+    border-radius: 5px;
+    overflow: auto;
+} */
+
+#record-content {
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 10;
+    width: 870px;
+    height: 560px;
+    left: 8px;
+    top: 60px;
+    display: none;
+}
+
+.taskItemContent {
+    position: absolute;
+    z-index: 10;
+    width: 877px;
+    height: 560px;
+    top: 40px;
+    left: 5px;
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.task-item {
+    position: relative;
+    z-index: 10;
+    width: 850px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 5px;
+}
+
+.wxpho-record {
+    position: absolute;
+    z-index: 10;
+    left: 5px;
+    width: 60px;
+    height: 60px;
+    top: 5px;
+}
+
+.outer-record {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    height: 70px;
+    z-index: 11;
+    left: 65px;
+    width: 730px;
+    display: inline-block;
+}
+
+.outer-record-only {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    height: 70px;
+    z-index: 11;
+    left: 5px;
+    width: 760px;
+    display: inline-block;
+}
+
+.sp-text-record {
+    position: relative;
+    z-index: 10;
+    top: 13px;
+    left: 5px;
+    color: rgb(56, 112, 233);
+    background-color: rgb(224, 234, 255);
+    font-size: 14px;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+.cover-record {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    height: 40px;
+    z-index: 11;
+    width: 730px;
+    left: 50px;
+    top: -10px;
+    display: inline-block;
+}
+
+.text-content-record {
+    position: absolute;
+    z-index: 10;
+    border: none;
+    width: 600px;
+    height: 25px;
+    top: 2px;
+    font-size: 16px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    vertical-align: middle;
+    background-color: rgba(234, 234, 234, 0);
+    /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical;
+    /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 1 !important;
+    /** 显示的行数 **/
+    overflow: hidden;
+    /** 隐藏超出的内容 **/
+}
+
+.task-item-btns {
+    position: absolute;
+    display: inline-block;
+    z-index: 10;
+    width: 45px;
+    height: 60px;
+    border: black;
+    top: 5px;
+    left: 790px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.task-complete {
+    position: absolute;
+    z-index: 10;
+    width: 50px;
+    height: 20px;
+    border: none;
+    font-size: 12px;
+    color: rgb(10, 194, 31);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.task-delete {
+    position: absolute;
+    z-index: 10;
+    width: 50px;
+    height: 35px;
+    border: none;
+    font-size: 12px;
+    top: 28px;
+    color: rgb(56, 112, 233);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.task-item:hover {
+    background-color: rgba(230, 242, 248, 0.5);
+}
+
+
+/* 四个处理框 */
+
+#filter {
+    font-size: 12px;
+    z-index: 10;
+    position: absolute;
+    width: 98px;
+    height: 26px;
+    top: 5px;
+    left: 5px;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+}
+
+#select {
+    font-size: 12px;
+    z-index: 10;
+    position: absolute;
+    width: 60px;
+    height: 26px;
+    top: 5px;
+    left: 110px;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+}
+
+#delete-btn {
+    font-size: 12px;
+    z-index: 10;
+    position: absolute;
+    width: 65px;
+    height: 26px;
+    top: 5px;
+    left: 178px;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+}
+
+.search {
+    z-index: 10;
+    position: absolute;
+    width: 200px;
+    height: 25px;
+    top: 8px;
+    left: 650px;
+    border-radius: 10px;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+#search_input {
+    z-index: 10;
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    left: 5px;
+    font-size: 12;
+    border: none;
+    color: rgb(200, 200, 200);
+    -webkit-app-region: no-drag;
+}
+
+#search_input:focus {
+    outline: none;
+}
+
+#icon_search {
+    z-index: 10;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 3px;
+    left: 180px;
+    -webkit-app-region: no-drag;
+}
+
+#change-content {
+    position: absolute;
+    left: 30px;
+    width: 50px;
+    height: 30px;
+    font-size: 12px;
+    color: rgb(35, 90, 250);
+    border: 1.3px solid rgb(35, 90, 250);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    top: 5px;
+    display: no;
+    -webkit-app-region: no-drag;
+}
+
+.outer {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+    z-index: 11;
+    left: 65px;
+    width: 570px;
+    display: inline-block;
+}
+
+.sp-text {
+    position: relative;
+    z-index: 10;
+    top: 13px;
+    left: 10px;
+    color: rgb(56, 112, 233);
+    background-color: rgb(224, 234, 255);
+    font-size: 12px;
+    padding: 2px 5px;
+}
+
+.record_img {
+    position: relative;
+    z-index: 10;
+    top: 13px;
+    left: 5px;
+    color: rgb(56, 112, 233);
+    background-color: rgb(0, 234, 255);
+}

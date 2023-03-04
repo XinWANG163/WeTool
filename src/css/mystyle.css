@@ -1,0 +1,445 @@
+* {
+    overflow: hidden;
+}
+
+.for_drag {
+    background: rgba(0, 254, 254, 0);
+    width: 1000px;
+    height: 30px;
+    position: absolute;
+    z-index: 10;
+    -webkit-app-region: drag;
+}
+
+.content {
+    background-repeat: no-repeat;
+}
+
+.pesudo-log {
+    width: 100px;
+    height: 45px;
+    position: absolute;
+    z-index: 10;
+    left: 27px;
+    top: 48px;
+    display: inline;
+    background: rgba(255, 255, 255, 0);
+}
+
+#photo {
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    z-index: 10;
+    border-radius: 3px;
+    display: inline;
+}
+
+#pesudo {
+    position: absolute;
+    z-index: 10;
+    width: 55px;
+    height: 20px;
+    left: 44px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    border-style: none;
+    background: rgba(17, 34, 146, 1);
+    border: none;
+    outline: none;
+}
+
+#logout {
+    position: absolute;
+    z-index: 10;
+    width: 55px;
+    height: 20px;
+    top: 23px;
+    left: 45px;
+    font-size: 11.8px;
+    color: rgba(255, 255, 255, 0.7);
+    border-style: none;
+    background: rgba(17, 34, 146, 1);
+    text-decoration: none;
+}
+
+
+/* 整个改动的面板的背景 */
+
+.container {
+    position: absolute;
+    z-index: 10;
+    width: 1200px;
+    height: 620px;
+    top: 105px;
+    font-size: 10px;
+    background-color: rgba(237, 238, 234, 0.01);
+}
+
+
+/* 正在发送、群发记录、定时任务三个按钮 */
+
+.choice {
+    position: absolute;
+    z-index: 11;
+    width: 325px;
+    height: 43px;
+    top: 15px;
+    left: 9px;
+    display: inline-block;
+    font-size: 10px;
+    background-color: rgb(255, 255, 255, 1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#ontime {
+    position: absolute;
+    z-index: 10;
+    width: 72px;
+    height: 42px;
+    top: 0px;
+    left: 15px;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255, 1);
+    color: rgb(35, 90, 250);
+    border-bottom: 5px solid rgb(35, 90, 250);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#record {
+    position: absolute;
+    z-index: 10;
+    left: 125px;
+    width: 72px;
+    height: 42px;
+    top: 0px;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255, 1);
+    color: rgb(35, 90, 250);
+    border-bottom: 5px solid rgb(35, 90, 250);
+}
+
+#task {
+    position: absolute;
+    z-index: 10;
+    left: 235px;
+    width: 72px;
+    height: 42px;
+    top: 0px;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: none;
+    color: rgb(35, 90, 250);
+    border-bottom: 5px solid rgb(35, 90, 250);
+}
+
+
+/* 右手边两个按钮：群发编辑器和公告编辑器 */
+
+.edit {
+    position: absolute;
+    display: inline-block;
+    z-index: 10;
+    width: 110px;
+    height: 29px;
+    top: 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+#blue {
+    left: 867px;
+    background: rgb(56, 112, 233);
+    border-radius: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 1);
+}
+
+#white {
+    left: 988px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    border: 1.5px solid rgb(56, 112, 233);
+}
+
+.edit-icon {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    top: 5px;
+    left: 5px;
+}
+
+.edit span {
+    position: relative;
+    z-index: 10;
+    width: 70px;
+    height: 20px;
+    left: 6px;
+    font-size: 14px;
+}
+
+#blue span {
+    color: white;
+}
+
+#white span {
+    color: rgb(60, 112, 233);
+}
+
+#config {
+    position: absolute;
+    z-index: 10;
+    width: 80px;
+    height: 25px;
+    top: 17px;
+    left: 1110px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    background: rgba(255, 255, 255, 1);
+}
+
+.func {
+    position: absolute;
+    z-index: 10;
+    width: 900px;
+    height: 55px;
+    top: 5px;
+    background: rgba(255, 255, 255, 1);
+}
+
+
+/*右手边详情页*/
+
+.details {
+    background: rgba(255, 255, 255, 1);
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    width: 300px;
+    height: 580px;
+    left: 890px;
+    top: 58px;
+    font-size: 14px;
+}
+
+#detail-title {
+    position: absolute;
+    z-index: 10;
+    width: 300px;
+    height: 30px;
+    background: rgba(255, 255, 255, 1);
+    border-bottom: 2px solid rgba(245, 245, 245, 1);
+    font-size: 14px;
+    padding-top: 7px;
+    padding-left: 7px;
+}
+
+.detail-content {
+    position: absolute;
+    z-index: 10;
+    width: 300px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 10px;
+    top: 40px;
+}
+
+.detail-btns {
+    position: relative;
+    z-index: 10;
+    width: 70px;
+    left: 0px;
+    height: 30px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+}
+
+#detail-c {
+    border-bottom: 2px solid rgb(35, 90, 250);
+    /*color: rgb(35, 90, 250);*/
+}
+
+#gray-content {
+    position: absolute;
+    z-index: 10;
+    width: 290px;
+    height: 440px;
+    margin: 5px;
+    font-size: 17px;
+    line-height: 25px;
+    top: 68px;
+    overflow: scroll;
+    overflow-x: none;
+}
+
+#gray-content::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 3px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+#gray-content::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    -webkit-box-shadow: inset 0 0 5px rgba(250, 250, 250);
+    background: rgba(0, 0, 0, 0);
+}
+
+#gray-content::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgb(250, 250, 250);
+    background: rgba(0, 0, 0, 0);
+}
+
+#getHightDiv {
+    position: absolute;
+    z-index: 10;
+    width: 210px;
+    height: auto;
+    font-size: 17px;
+    margin: 6px;
+    top: 25px;
+    line-height: 25px;
+}
+
+#show-detail-content {
+    position: absolute;
+    z-index: 10;
+    width: 230px;
+    height: 440px;
+    left: 33px;
+    background: rgba(255, 255, 255, 0);
+    font-size: 17px;
+    line-height: 25px;
+    vertical-align: middle;
+    border: none;
+    resize: none;
+    top: 5%;
+}
+
+#no_content {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    vertical-align: middle;
+}
+
+#show-detail-content:focus {
+    outline: none;
+}
+
+#detail-content-div {
+    position: absolute;
+    z-index: 10;
+    width: 280px;
+    height: auto;
+    margin: 5px;
+    background: rgba(240, 240, 240, 1);
+    font-size: 17px;
+    line-height: 25px;
+    /*top: 68px;*/
+    border: none;
+    resize: none;
+}
+
+
+/*右下角两个按钮*/
+
+.details-btns {
+    position: absolute;
+    z-index: 10;
+    width: 300px;
+    height: 50px;
+    background: rgba(232, 238, 250, 1);
+    font-size: 14px;
+    top: 525px;
+}
+
+#edit-content {
+    position: absolute;
+    left: 90px;
+    width: 50px;
+    height: 30px;
+    font-size: 12px;
+    color: rgb(35, 90, 250);
+    border: 1.3px solid rgb(35, 90, 250);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    top: 5px;
+}
+
+#btn-again {
+    position: absolute;
+    left: 150px;
+    width: 75px;
+    height: 30px;
+    font-size: 12px;
+    color: rgb(35, 90, 250);
+    border: 1.3px solid rgb(35, 90, 250);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    top: 5px;
+}
+
+#more {
+    position: absolute;
+    left: 235px;
+    width: 50px;
+    height: 23px;
+    font-size: 14px;
+    border: none;
+    color: rgb(35, 90, 250);
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+    vertical-align: middle;
+    top: 5px;
+}
+
+
+/* 滚动条 */
+
+.scrollbar {
+    position: absolute;
+    width: 2px;
+    height: 350px;
+    display: inline-block;
+}
+
+#show-details-to::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 3px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+#show-details-to::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    -webkit-box-shadow: inset 0 0 5px rgb(157, 157, 157);
+    background: #afadad;
+}
+
+#show-details-to::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgb(157, 157, 157);
+    background: #EDEDED;
+}
+
+.show-to-items {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    display: inline-block;
+    background-color: rgba(0, 254, 254, 1);
+}

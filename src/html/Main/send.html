@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeTool 企业版 4.2.3</title>
+    <link rel="stylesheet" type="text/css" href="../../css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../../css/send.css">
+    <style>
+        #detail-c {
+            border-bottom: 2px solid rgb(140, 175, 241);
+            color: rgb(140, 175, 241);
+        }
+    </style>
+</head>
+<div>
+    <div class="for_drag"></div>
+    <div class="pesudo-log">
+        <img id="photo" src="../../assets/titleBar/tx.jpg" onclick="changep()">
+        <input style="display:none" id="uploadFileTempSeat" type="file" onchange="getImage(this)">
+        <input id="pesudo" value="Jeanne" onchange="changeName()" maxlength="10">
+        <a id="logout" href="#" onclick="closeWindow()">退出登录</a>
+    </div>
+    <div class="tabber">
+        <img class="content" src="../../assets/titleBar/3.png" usemap="#planetmap" />
+        <map name="planetmap" id="planetmap">
+            <area shape="rect" coords="230,20,300,90" href="./index.html"/> 
+            <area shape="rect" coords="330,20,400,90" href="./kefu.html"/>
+            <area shape="rect" coords="430,20,500,90" href="./send.html"/> 
+            <area shape="rect" coords="530,20,600,90" href="./add.html"/> 
+            <area shape="rect" coords="630,20,700,90" href="./delete.html"/>
+            <area shape="rect" coords="730,20,800,90" href="./robot.html"/> 
+            <area shape="rect" id="closeWindow" coords="1180,0,1215,20" onclick="closeWindow()"/>
+         </map>
+    </div>
+    <!-- 左边三个按钮 -->
+    <div class="container">
+        <div class="choice">
+            <button id="ontime" onclick="showSending()">正在发送</button>
+            <button id="record" onclick="showRecord()">群发记录</button>
+            <button id="task" onclick="showSending()">定时任务</button>
+        </div>
+
+        <!-- 右边三个按钮 -->
+        <div class="edit" id="blue">
+            <img class="edit-icon" src="../../assets/editw.png">
+            <span>群发编辑器</span>
+        </div>
+        <div class="edit" id="white">
+            <img class="edit-icon" src="../../assets/editb.png">
+            <span>公告编辑器</span>
+        </div>
+        <button id="config">发送配置</button>
+
+        <!-- 左边栏：发送内容-正在发送 -->
+        <div id="sendingContent">
+            <div class="func">
+                <div class="qiehuan">
+                    <img id="arrow" src="../../assets/arrow.png">
+                    <input type="text" id="qhtext" disabled="disabled" value="切换至自动分批发送模式">
+                    <img id="question" src="../../assets/question.png">
+                </div>
+            </div>
+            <div class="sendingItemContent">
+                <div class="sendingitem">
+                    <div class="box" id="sendingBox">
+                        <div class="loadBox">
+                            <div class="load" id="load"></div>
+                        </div>
+                        <span type="text" id="loadResult"></span>
+                    </div>
+                    <input type="text" value="800" id="total">
+                    <img id="wxpho-sending" src="../../assets/wx0.png" onclick="changeSendingp(event)">
+                    <input id="sending_img" type="file" onchange="getSendingImage(this)">
+                    <div class="cover" onclick="showTextContent(event)">
+                        <span class="sp-text"> 文本 </span>
+                        <div class="text-content">这是一条测试数据，数据只显示一行，如果超过则以冒号显示,这是一条测试数据，数据只显示一行，如果超过则以冒号显示，这是一条测试数据，数据只显示一行，如果超过则以冒号显示</div>
+                        <span class="sendingText" id="sendingTe">发送中</span>
+                    </div>
+                    <div class="text-info">
+                        <input type="text" id="send-time" value="今天 14:36:16"></input>
+                        <input type="text" class="text-type" value="1文本/1图片"></input>
+                        <input type="text" id="send-number" value="567个群"></input>
+                        <input type="text" class="send-type" value="即时群发"></input>
+                        <input type="text" class="x" value="标签:"></input>
+                        <button name="stop" value="暂停">暂停</button>
+                        <button name="cancel" value="取消">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 群发记录 -->
+        <div id="record-content">
+            <div class="func">
+                <button id="filter">按任务标签筛选</button>
+                <select id="select">
+                    <option>全部</option>
+                    <option>已完成</option>
+                    <option>已取消</option>
+                </select>
+                <button id="delete-btn">全部删除</button>
+                <div class="search">
+                    <input type="text" id="search_input" placeholder="搜索文本消息内容">
+                    <img id="icon_search" src="../../assets/search.png">
+                </div>
+            </div>
+            <div class="taskItemContent" id="show-record-items">
+
+            </div>
+        </div>
+
+        <!-- 右边详情页 -->
+        <div class="details">
+            <div id="detail-title">详情</div>
+            <div class="detail-content">
+                <button class="detail-btns" id="detail-c" onclick="showTextContent(event)">发送内容</button>
+                <button class="detail-btns" id="detail-t" onclick="showTo(event)">发送对象</button>
+            </div>
+            <div id="gray-content">
+                <div id="getHightDiv"></div>
+                <div id="detail-content-div">
+                    <img id="no_content" src="../../assets/no1.png">
+                    <textarea id="show-detail-content" readonly> </textarea>
+                </div>
+            </div>
+
+            <div class="details-btns">
+                <button class="edit-content" id="change-content" onclick="changeTextContent(event)">完成</button>
+                <button id="edit-content" onclick="editTextContent(event)">修改</button>
+                <button id="btn-again">再次创建</button>
+                <button id="more">更多</button>
+            </div>
+            <div id="show-details-to">
+                <ul id="show-to-items"></ul>
+                <div class="scrollbar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/my.js"></script>
+    <script>
+        function showSendTos() {
+            list = ""
+            ok = Math.ceil(Math.random() * 10) + 5;
+            for (var i = 0; i < ok; i++) {
+                var p = Math.ceil(Math.random() * 5)
+                list += "<li class='show-to-item'><img class='qph' src='../../assets/wx" + p + ".png'>"
+                var name = Math.ceil(Math.random() * (Users.length - 1))
+                list += "<div class='to-outer'><span class='to-name'>" + Users[name] + (1 + Math.ceil(Math.random() * 10)) + "</span><div class='to-text-info'>"
+                var r = 1 + Math.ceil(Math.random() * 500)
+                var q = r + Math.ceil(Math.random() * 300)
+                list += '<span class="to-text">群成员' + q + '/好友数' + r + '</span></div></div>'
+                list += '<img class="status" src="../../assets/finished.png"></li>'
+            }
+            ready = Math.ceil(Math.random() * 300) + 10
+            for (var i = 0; i < ready; i++) {
+                var p = Math.ceil(Math.random() * 5)
+                list += "<li class='show-to-item'><img class='qph' src='../../assets/wx" + p + ".png'>"
+                var name = Math.ceil(Math.random() * (Users.length - 1))
+                list += "<div class='to-outer'><span class='to-name'>" + Users[name] + (1 + Math.ceil(Math.random() * 10)) + "</span><div class='to-text-info'>"
+                var r = 1 + Math.ceil(Math.random() * 500)
+                var q = r + Math.ceil(Math.random() * 300)
+                list += '<span class="to-text">群成员' + q + '/好友数' + r + '</span></div></div>'
+                list += '<img class="status" src="../../assets/ontime.png"></li>'
+            }
+            var ul = document.getElementById("show-to-items");
+            ul.innerHTML = list
+
+        }
+        window.onload = function() {
+            showSending()
+            loadingRecord()
+        }
+    </script>
+    </body>
+
+</html>

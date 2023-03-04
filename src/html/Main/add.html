@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:;  style-src 'self' 'unsafe-inline'"> -->
+    <title>WeTool 企业版 4.2.3</title>
+    <link rel="stylesheet" type="text/css" href="../../css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="../../css/send.css">
+</head>
+
+<body>
+    <div class="for_drag"></div>
+    <div class="pesudo-log">
+        <img id="photo" src="../../assets/titleBar/tx.jpg" onclick="changep()">
+        <input style="display:none" id="uploadFileTempSeat" type="file" onchange="getImage(this)">
+        <input id="pesudo" value="Jeanne" onchange="changeName()" maxlength="10">
+        <a id="logout" href="#" onclick="closeWindow()">退出登录</a>
+    </div>
+    <div class="tabber">
+        <img class="content" src="../../assets/titleBar/4.png" usemap="#planetmap" />
+        <map name="planetmap" id="planetmap">
+            <area shape="rect" class="map" coords="230,20,300,90" href="./index.html"/> 
+            <area shape="rect" class="map" coords="330,20,400,90" href="./kefu.html"/>
+            <area shape="rect" class="map" coords="430,20,500,90" href="./send.html"/> 
+            <area shape="rect" class="map" coords="530,20,600,90" href="./add.html"/> 
+            <area shape="rect" class="map" coords="630,20,700,90" href="./delete.html"/>
+            <area shape="rect" class="map" coords="730,20,800,90" href="./robot.html"/> 
+            <area shape="rect" class="map" id="closeWindow" coords="1180,0,1215,20" onclick="closeWindow()"/>
+         </map>
+    </div>
+    <script src="../../js/my.js"></script>
+</body>
+
+</html>
